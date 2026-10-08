@@ -51,21 +51,7 @@ export const getSingleCharacter = (params)=> {
   }
 }
 
-export const loadMoreCharacters = (params)=> {
-  return async (dispatch)=> {
-    try {
-      const response = await getRequest(CHARACTERS_URL, params)
-      dispatch({type: LOAD_MORE_DATA, payload: response.data.results})
-    }
-    catch (error) {
-      dispatch({type: CHARACTERS_REJECT, payload: error})
-    }
-  }
-}
-
-
-
-    export const resetData = ()=> {
+export const resetData = ()=> {
   return async (dispatch)=> {
     dispatch({type: RESET_DATA})
   }
